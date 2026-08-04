@@ -9,7 +9,7 @@ Measurements of the luminosity functions of AGNs in both the X-ray and radio ban
 See paper, [C.M. Pennock et al. (2025)](https://ui.adsabs.harvard.edu/abs/2025MNRAS.544.1779P/abstract)   
 
 ## The XRLF - Quick plot
-[XRLF_plot](https://github.com/cmpennock/XRLF/tree/main/XRLF_plot) contains all the measurements, and their corresponding upper and lower limits of the XRLF of AGN found across the Bootes and COSMOS regions across 8 redshift ranges, as shown in Figures 5 & A1 in C.M. Pennock et al. (2025). 
+[XRLF_plot](https://github.com/cmpennock/XRLF/tree/main/XRLF_plot) contains all the measurements, and their corresponding upper and lower limits, of the XRLF of AGN found across the Bootes and COSMOS regions across 8 redshift ranges, as shown in Figures 5 & A1 in C.M. Pennock et al. (2025). 
 
 The Jupiter notebook, [XRLF.ipynb](https://github.com/cmpennock/XRLF/blob/main/XRLF_plot/XRLF.ipynb), will use these measurements to create a plot of the XRLF of your chosen redshift range (note, only uses the same redshifts as used in the paper), that you can then interact with. 
 
