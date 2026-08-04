@@ -1,4 +1,3 @@
-[RXLF_3D_example_v7.pdf](https://github.com/user-attachments/files/30710773/RXLF_3D_example_v7.pdf)
 # X-ray Radio Luminosity Function (XRLF) for AGN
 
 Actively accreting supermassive black holes (SMBH), also known as active galactic nuclei (AGNs), can produce radiation across the electromagnetic spectrum (e.g. P. Padovani et al. 2017, and references therein). The source of the emission in the AGN structure is distinct to each wavelength. The primary originator of X-ray emission in an AGN is the inverse Compton scattering of photons from the accretion disc, which takes place in a hot corona. For the brightest radio emitters, often referred to as the radio-loud population which are expected to only take up ∼10 per cent of the entire AGN population, the emission is primarily from synchrotron emission in large (up to megaparsec scales) powerful relativistic jets. Radio and X-ray emission are often good indicators of the presence of an AGN, even when the AGN is obscured at other wavelengths (see R. C. Hickox & D. M. Alexander 2018, and references therein). 
@@ -13,6 +12,8 @@ See paper, [C.M. Pennock et al. (2025)](https://ui.adsabs.harvard.edu/abs/2025MN
 [XRLF_plot](https://github.com/cmpennock/XRLF/tree/main/XRLF_plot) contains all the measurements, and their corresponding upper and lower limits, of the XRLF of AGN found across the Bootes and COSMOS regions across 8 redshift ranges, as shown in Figures 5 & A1 in C.M. Pennock et al. (2025). 
 
 The Jupiter notebook, [XRLF.ipynb](https://github.com/cmpennock/XRLF/blob/main/XRLF_plot/XRLF.ipynb), will use these measurements to create a plot of the XRLF of your chosen redshift range (note, only uses the same redshifts as used in the paper), that you can then interact with. 
+
+![RXLF_3D_example_v7.pdf](https://github.com/user-attachments/files/30710773/RXLF_3D_example_v7.pdf)
 
 ## Calculating the XRLF (still adding...)
 'Pennock2025' contains the catalogues used in C.M. Pennock et al. (2025) and the code is provided in the Jupiter notebook that will allow you to plot all the plots found in the paper, including the code that was used to measure the XRLF of AGN across Bootes and COSMOS.
