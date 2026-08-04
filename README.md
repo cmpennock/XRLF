@@ -1,1 +1,1 @@
-# XRLF (X-ray Radio Luminosity Function)
+# X-ray Radio Luminosity Function (XRLF)
