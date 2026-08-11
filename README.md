@@ -8,6 +8,34 @@ Measurements of the luminosity functions of AGNs in both the X-ray and radio ban
 
 See paper, [C.M. Pennock et al. (2025)](https://ui.adsabs.harvard.edu/abs/2025MNRAS.544.1779P/abstract)   
 
+## The XRLF - Method
+To estimate the luminosity functions for the individual X-ray and radio wavebands, we use the method described in M. J. Page & F. J. Carrera (2000), modified to account for changing sensitivity across survey area:
+
+$$\phi_{\rm est, \lambda} = \frac{N_{\lambda}(l_{\lambda},z)}{\int_{z_{\rm min}}^{z_{\rm max}} \int_{l_{\rm \lambda, min}}^{l_{\rm \lambda, max}}A(f_{\lambda}(L_{\lambda},z)) \frac{dV}{dz}dz \ d\log(L_{\lambda})} $$
+
+Where $N_\lambda$ is the total number of sources in a specified redshift and luminosity (X-ray or radio) range, $\lambda$ represents the wavelength at which the luminosity function is being measured (X-ray or radio) and $A$ is the survey area that is sensitive to a source with a specified flux (as defined by the sensitivity curves in the X-ray and the flux cuts in the radio), $f_\lambda$, corresponding to a given luminosity, $L_\lambda$, and redshift, $z$.
+$\frac{dV}{dz}$ is the differential co-moving volume (with respect to $z$) per unit area. 
+$l_{\rm \lambda,min},l_{\rm \lambda,max}$ (where $l_{\rm \lambda,min},l_{\rm \lambda,max}) \equiv (\log L_{\rm \lambda,min}, \log L_{\rm \lambda,max}$) and $z_{\rm min},z_{\rm max}$ indicate the limits of the luminosity and redshift bin over which the binned luminosity function is calculated.
+1 $\sigma$ equivalent uncertainties on
+$\phi_{\rm est, \lambda}$ are calculated based on the Poisson uncertainties in the observed
+source number, $N_\lambda$, using the relations given by Gehrels (1986).
+
+To estimate the X-ray--radio luminosity function we modify this equation, to calculate a single volume which allows for whether the radio or X-ray detection limits place the most stringent constraints on the survey area that we are sensitive to at a given $L_{\mathrm{X}}$ or $L_{\mathrm{R}}$ and $z$. By integrating over these joint limitations we are able to accurately assess the cosmological volume that we are probing with the combination of our X-ray and radio surveys for a given luminosity/redshift bin. 
+Our binned estimator of the X-ray--radio luminosity function is thus given by:
+
+$$ \phi_{\mathrm{XR}} = \frac{N_{\mathrm{XR}}(L_{\mathrm{X}},L_{\mathrm{R}}, z)}{\int_{z_{\rm min}}^{z_{\rm max}} \left[\int_{l_{\rm X, min}}^{l_{\rm X, max}} \int_{l_{\rm R, min}}^{l_{\rm R, max}} A_{\rm m} d\log(L_{\mathrm{X}}) d\log(L_{\mathrm{R}}) \right] \frac{dV}{dz}dz } $$
+
+
+where $A_{\rm m} =min\Bigl(A\bigl(f_{\mathrm{X}}(L_{\mathrm{X}},z)\bigr), A\bigl(f_{\mathrm{R}}(L_{\mathrm{R}},z)\bigr) \Bigr)$ and $N_{\mathrm{XR}}$ is the total number of sources in a specified redshift, X-ray luminosity and radio luminosity range. 
+While $\phi_{\rm est}$ has units of $\mathrm{Mpc}^{-3}$ $(\log L_\lambda)^{-1}$ i.e. per unit volume per logarithmic luminosity interval, $\phi_{\mathrm{XR}}$, which involves an integration over both the X-ray and radio luminosity interval, has units of $\mathrm{Mpc}^{-3}$ ($\log L_{\mathrm{X}})^{-1} (\log L_{\mathrm{R}})^{-1}$. We note that to compare directly to measurements of luminosity functions in a single band thus requires us to multiply by the size of the bin in the other wavelength. We thus define $\phi_{\mathrm{X}}(L_{\mathrm{X}} | L_{\mathrm{R}})$, the X-ray luminosity function for sources of a given radio luminosity as:
+
+$$ \phi_{\mathrm{X}}(L_{\mathrm{X}} | L_{\mathrm{R}}) = \int_{l_{\rm R,min}}^{l_{\rm R,max}} \phi_{\mathrm{XR}}(L_{\mathrm{X}},L_{\mathrm{R}}) d \log (L_{\mathrm{R}}) $$
+
+$$ \approx \phi_{\mathrm{XR}}(L_{\mathrm{X}},L_{\mathrm{R}}) \times \Delta \log L_{\mathrm{R}} $$
+
+where $\Delta \log L_{\mathrm{R}} = l_{\rm R,max}-l_{\rm R,min}$ is the size of the logarithmic radio luminosity bin. 
+The radio luminosity function of sources of a given X-ray luminosity, $\phi_{\mathrm{R}}(L_{\mathrm{R}} | L_{\mathrm{X}})$, is defined in an equivalent manner.
+
 ## The XRLF - Quick plot
 [XRLF_plot](https://github.com/cmpennock/XRLF/tree/main/XRLF_plot) contains all the measurements, and their corresponding upper and lower limits, of the XRLF of AGN found across the Bootes and COSMOS regions across 8 redshift ranges, as shown in Figures 5 & A1 in C.M. Pennock et al. (2025). 
 
@@ -15,6 +43,6 @@ The Jupiter notebook, [XRLF.ipynb](https://github.com/cmpennock/XRLF/blob/main/X
 
 ![RXLF_3D_example_v7.pdf](https://github.com/user-attachments/files/30710773/RXLF_3D_example_v7.pdf)
 
-## Calculating the XRLF (still adding...)
-'Pennock2025' contains the catalogues used in C.M. Pennock et al. (2025) and the code is provided in the Jupiter notebook that will allow you to plot all the plots found in the paper, including the code that was used to measure the XRLF of AGN across Bootes and COSMOS.
+## The XRLF - Measuring and plotting
+[XRLF_measure_and_plot](https://github.com/cmpennock/XRLF/tree/main/XRLF_measure_and_plot) contains the catalogue of X-ray and radio detected sources in the COSMOS and Bootes fields, as well as the X-ray area curves for the two fields, used in C.M. Pennock et al. (2025) and the code is provided in the Jupiter notebook that will allow you to measure and plot the XRLF of AGN across Bootes and COSMOS.
 
